@@ -127,3 +127,70 @@ Este proyecto te permitirá aplicar conceptos clave de desarrollo backend, dise�
 ---
 
 Recuerda mantener tu código limpio, documentado y seguir las buenas prácticas de desarrollo. ¡Nos vemos en clase para revisar tu progreso el 10 de octubre de 2024!
+
+
+
+# Inicialización del Proyecto
+
+Esta guía te ayudará a configurar y ejecutar el proyecto de manera local.
+
+## Requisitos Previos
+
+1. **Node.js**: Asegúrate de tener Node.js instalado. Puedes descargarlo desde [aquí](https://nodejs.org/).
+2. **MySQL**: Asegúrate de tener MySQL instalado y en funcionamiento. Puedes descargarlo desde [aquí](https://www.mysql.com/downloads/).
+
+## Configuración del Entorno
+
+1. **Clonar el Repositorio**:
+   ```bash
+   git clone https://github.com/JDGA1997/Trabajo-Integrador-Relacional-Backend-Diplomatura-UNTREF
+   cd Trabajo-Integrador-Relacional-Backend-Diplomatura-UNTREF
+
+
+## Instalar Dependencias
+
+npm install
+
+
+## Configurar Variables de Entorno:
+#### Crea un archivo .env en la raíz del proyecto y agrega las siguientes variables de entorno:
+
+DB_USER=root
+DB_PASSWORD=password
+DB_NAME=trailerflix
+DB_PORT=3306
+DB_HOST=localhost
+DB_DIALECT=mysql
+NODE_ENV=development
+
+
+
+# Configuración de la Base de Datos
+
+## Crear la Base de Datos:
+#### Asegúrate de que MySQL esté en funcionamiento y ejecuta el siguiente comando para crear la base de datos:
+
+CREATE DATABASE IF NOT EXISTS trailerflix;
+
+
+## Ejecutar el Script SQL:
+#### Ejecuta el script trailerflix.sql para crear las tablas necesarias y poblarlas con datos iniciales. Puedes hacerlo utilizando un cliente MySQL como MySQL Workbench o desde la línea de comandos:
+
+mysql -u root -p trailerflix < path/to/trailerflix.sql
+
+
+# Ejecutar el Proyecto
+
+## Iniciar el Servidor:
+
+npm start
+
+
+## Acceder a la Aplicación
+
+Abre tu navegador y navega a http://localhost:3000 para ver la aplicación en funcionamiento.
+
+
+## Documentación de la API
+
+La documentación de la API está disponible en http://localhost:3000/api-docs.
