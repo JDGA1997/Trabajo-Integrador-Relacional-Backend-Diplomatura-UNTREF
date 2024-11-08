@@ -1,27 +1,38 @@
-const express = require('express');
-const router = express.Router();
-const db = require('../conexion/database');
+import { Router } from 'express';
+import {
+    getAllContenido,
+    getContenidoById,
+    createContenido,
+    updateContenido,
+    deleteContenido,
+    filterByTitle,
+    filterByCategory,
+    filterByGenre,
+    getContenidoByTitulo,
+    getContenidoByGenero,
+    getContenidoByCategorias,
+    getContenidoWithActores
+} from '../controllers/contenidoController.js';
 
-// Routes for CRUD
-router.get('/', (req, res) => {
-    // Get all content
-});
+/**
+ * Crea una nueva instancia del enrutador.
+ * 
+ * @constant
+ * @type {Router}
+ */
+const router = Router();
 
-router.get('/:id', (req, res) => {
-    // Get content by ID
-});
+router.get('/', getAllContenido);
+router.get('/:id', getContenidoById);
+router.post('/', createContenido);
+router.put('/:id', updateContenido);
+router.delete('/:id', deleteContenido);
+router.get('/titulo/:titulo', getContenidoByTitulo);
+router.get('/genero/:id_genero', getContenidoByGenero);
+router.get('/categoria/:id_categoria', getContenidoByCategorias);
+router.get('/actores/:id_contenido', getContenidoWithActores);
+router.get('/filtrar/titulo', filterByTitle);
+router.get('/filtrar/categoria', filterByCategory);
+router.get('/filtrar/genero', filterByGenre);
 
-router.post('/', (req, res) => {
-    // Add new content
-});
-
-router.put('/:id', (req, res) => {
-    // Update content by ID
-});
-
-router.delete('/:id', (req, res) => {
-    // Delete content by ID
-});
-
-module.exports = router;
-    
+export default router;

@@ -1,0 +1,54 @@
+### Obtener todos los contenidos
+GET http://localhost:3000/contenido
+
+### Obtener contenido por ID
+GET http://localhost:3000/contenido/1
+
+### Crear nuevo contenido
+POST http://localhost:3000/contenido
+Content-Type: application/json
+
+{
+  "titulo": "Nuevo Contenido",
+  "categoriaId": 1,
+  "generoId": 1,
+  "resumen": "Resumen del nuevo contenido",
+  "temporadas": 1,
+  "duracion": "120 minutos",
+  "reparto": "Actor 1, Actor 2",
+  "trailer": "https://www.youtube.com/embed/example"
+}
+
+### Actualizar contenido por ID
+PUT http://localhost:3000/contenido/1
+Content-Type: application/json
+
+{
+  "titulo": "Contenido Actualizado",
+  "resumen": "Resumen actualizado",
+  "temporadas": 2
+}
+
+### Eliminar contenido por ID
+DELETE http://localhost:3000/contenido/1
+
+### Filtrar contenido por título
+GET http://localhost:3000/contenido/filtrar/titulo?titulo=Nuevo Contenido
+
+### Filtrar contenido por categoría
+GET http://localhost:3000/contenido/filtrar/categoria?categoria=1
+
+### Filtrar contenido por género
+GET http://localhost:3000/contenido/filtrar/genero?genero=1
+
+### Obtener contenido por título
+GET http://localhost:3000/contenido/titulo/Nuevo Contenido
+
+### Obtener contenido por género
+GET http://localhost:3000/contenido/genero/1
+
+### Obtener contenido por categoría
+GET http://localhost:3000/contenido/categoria/1
+
+### Obtener contenido con actores
+GET http://localhost:3000/contenido/actores/1
